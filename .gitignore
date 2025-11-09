@@ -1,0 +1,35 @@
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Cache
+.cache/
+.tmp/
+temp/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# VSCode settings (optional but recommended)
+.vscode/
+
+# Build files (if using any bundler)
+dist/
+build/
+
+# Local uploads (if any)
+uploads/
+
+# Lock files (optional – but recommended to ignore if using multiple package managers)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
