@@ -1,0 +1,76 @@
+<style>
+  .search-btn {
+    background-color: #fe424d;
+    color: #fff;
+    border-radius: 999px;
+    padding: 0 1.5rem;
+    font-size: 1rem;
+    height: 3.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .search-btn:hover {
+    background-color: #e03a44;
+    cursor: pointer;
+  }
+
+  .search-inp {
+    border-radius: 999px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    height: 3.25rem;
+    border: 1.5px solid #dcdcdc;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .search-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin-left: 12rem; /* 👈 slightly pushes it to the right */
+  }
+
+  .navbar-nav.logo, .navbar-nav.links {
+    flex-shrink: 0;
+  }
+</style>
+
+<nav class="navbar navbar-expand-lg bg-body-light border-bottom sticky-top">
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+
+    <!-- Logo -->
+    <div class="navbar-nav logo">
+      <a class="navbar-brand" href="/listings">
+        <i class="fa-solid fa-compass"></i>
+      </a>
+    </div>
+
+    <!-- Slightly Right-Aligned Center Search -->
+    <div class="search-wrapper">
+      <form class="d-flex align-items-center" role="search">
+        <input class="form-control me-2 search-inp" type="search" placeholder="Search Destination" />
+        <button class="btn search-btn" type="submit">
+          <i class="fa-solid fa-magnifying-glass"></i>Search
+        </button>
+      </form>
+    </div>
+
+    <!-- Right Links -->
+    <div class="navbar-nav links">
+      <a class="nav-link" href="/listings/new">Airbnb your home</a>
+
+      <% if (typeof currUser === "undefined" || !currUser) { %>
+        <a class="nav-link" href="/signup"><b>Sign up</b></a>
+        <a class="nav-link" href="/login"><b>Log in</b></a>
+      <% } else { %>
+        <a class="nav-link" href="/logout"><b>Log out</b></a>
+      <% } %>
+    </div>
+
+  </div>
+</nav>
