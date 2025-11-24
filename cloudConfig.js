@@ -1,17 +1,16 @@
 const cloudinary = require("cloudinary").v2;
 const { CloudinaryStorage } = require("multer-storage-cloudinary");
 
-// 👇 Yaha hard-code test kar rahe hain
 cloudinary.config({
-  cloud_name: "duaowwzm5",  // ← yaha direct naam likha
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME?.trim(), // 👈 yaha env use + extra spaces hatao
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
 const storage = new CloudinaryStorage({
-  cloudinary: cloudinary,
+  cloudinary,
   params: {
-    folder: "StayHub"
+    folder: "StayHub",
   },
 });
 
